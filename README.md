@@ -3,9 +3,9 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![R Version](https://img.shields.io/badge/R-v4.1.0+-blue.svg)
 
-## Overview
+## Project Description
 
-This project investigates geographic disparities in Boston's 311 non-emergency service request system, with a focus on response time inequities between neighborhoods. Using five years (2015-2019) of Boston's open 311 service request data, we analyze response time patterns, develop predictive models, and identify factors contributing to service delivery disparities across the city.
+This project investigates geographic disparities in Boston's 311 non-emergency service request system by analyzing five years (2015-2019) of data. Using statistical modeling and machine learning techniques, we examined whether response times differ systematically between neighborhoods, particularly comparing North and South Boston regions. Our analysis revealed that South Boston neighborhoods experience 12.5% longer response times on average than North Boston areas (126 hours vs. 112 hours). Through Random Forest modeling, we identified that request type, submission method, and request year were the strongest predictors of response time, collectively explaining nearly 50% of the variation. After controlling for these and other factors, we found persistent neighborhood effects, with certain areas consistently experiencing longer wait times. Additionally, we discovered significant seasonal variations, with winter months showing the longest delays (128 hours on average), particularly in South Boston neighborhoods.
 
 ## Key Findings
 
@@ -111,7 +111,18 @@ source("project1_final_file.R")
 
 - `project1_final_file.R`: Main analysis script with all data processing, visualization, and modeling
 - `project1.R`: Development version with additional exploratory code
-- `Initial_Analysis_Report.pdf`: Project documentation and findings
+- `Initial_Analysis_Report.pdf`: Initial project documentation and findings
+- `Final_Report.pdf`: Comprehensive final report with detailed analysis, findings, and recommendations
+
+## Documentation
+
+For a detailed understanding of our methodology, findings, and recommendations, please review the [Final Report](Final_Report.md). This comprehensive document includes:
+
+- Detailed statistical analysis results
+- In-depth discussion of neighborhood disparities
+- Temporal and seasonal trends analysis
+- Machine learning model interpretations
+- Policy recommendations based on findings
 
 ## Authors
 
