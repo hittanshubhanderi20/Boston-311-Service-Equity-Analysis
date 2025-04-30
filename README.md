@@ -73,7 +73,7 @@ The Random Forest model identified request type as the most important predictor 
 This chart compares median response times between North and South Boston across different request types. South Boston consistently experiences longer response times across most request types.
 
 ### Neighborhood Response Time Disparities
-![Disparity Trends](screenshot4.png)
+![Disparity Trends]([screenshot4.png](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/disparity_trends.png))
 
 This visualization tracks neighborhood response time disparities over the five-year period. The three neighborhoods with the highest disparities (Hyde Park, Dorchester, and Jamaica Plain) are highlighted, showing persistent inequities.
 
