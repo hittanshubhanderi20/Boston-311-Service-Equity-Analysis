@@ -58,22 +58,22 @@ We conducted extensive exploratory analysis to understand patterns in the data:
 ## Key Visualizations
 
 ### Response Time Distribution by Region
-![Response Time Distribution](screenshot1.png)
+![Response Time Distribution](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/response_time_dist.png)
 
 This histogram shows the distribution of response times for North vs South Boston neighborhoods on a logarithmic scale. South Boston neighborhoods (teal) show consistently longer response times, particularly in the 1-day to 1-week range.
 
 ### Top Predictors of Response Time
-![Variable Importance](screenshot2.png)
+![Variable Importance](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/variable_importance.png)
 
 The Random Forest model identified request type as the most important predictor of response time, followed by source and request year. These three variables together account for the majority of predictive power.
 
 ### Response Time by Request Type and Region
-![Response by Type](screenshot3.png)
+![Response by Type](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/response_by_type.png)
 
 This chart compares median response times between North and South Boston across different request types. South Boston consistently experiences longer response times across most request types.
 
 ### Neighborhood Response Time Disparities
-![Disparity Trends]([screenshot4.png](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/disparity_trends.png))
+![Disparity Trends](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/disparity_trends.png)
 
 This visualization tracks neighborhood response time disparities over the five-year period. The three neighborhoods with the highest disparities (Hyde Park, Dorchester, and Jamaica Plain) are highlighted, showing persistent inequities.
 
