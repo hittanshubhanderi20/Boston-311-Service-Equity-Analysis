@@ -1,140 +1,109 @@
-# Boston 311 Service Equity Analysis
+# 🏙️ Boston 311 Service Equity Analysis
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![R Version](https://img.shields.io/badge/R-v4.1.0+-blue.svg)
+![R Version](https://img.shields.io/badge/R-v4.2.0+-blue.svg)
+![Made With](https://img.shields.io/badge/Made%20With-R%20&%20ggplot2-green.svg)
 
-## Project Description
+---
 
-This project investigates geographic disparities in Boston's 311 non-emergency service request system by analyzing five years (2015-2019) of data. Using statistical modeling and machine learning techniques, we examined whether response times differ systematically between neighborhoods, particularly comparing North and South Boston regions. Our analysis revealed that South Boston neighborhoods experience 12.5% longer response times on average than North Boston areas (126 hours vs. 112 hours). Through Random Forest modeling, we identified that request type, submission method, and request year were the strongest predictors of response time, collectively explaining nearly 50% of the variation. After controlling for these and other factors, we found persistent neighborhood effects, with certain areas consistently experiencing longer wait times. Additionally, we discovered significant seasonal variations, with winter months showing the longest delays (128 hours on average), particularly in South Boston neighborhoods.
+## 📊 Project Overview
 
-## Key Findings
+This project investigates **equity in public service response times** across Boston neighborhoods using Boston 311 service request data (2015–2019). Using exploratory data analysis, statistical modeling (OLS, stepwise, LASSO), and visual storytelling, the goal is to understand whether **response disparities** exist along lines of **race, income, education, complexity**, or **geographic region**.
 
-- **Geographic Disparities**: South Boston neighborhoods experience response times that are on average 12.5% longer than North Boston neighborhoods (126 hours vs. 112 hours).
+---
 
-- **Predictive Power**: Our Random Forest model identified service request type, source of request, and year as the strongest predictors of response time, with the full model explaining nearly 50% of the variation.
+## 🔍 Key Insights
 
-- **Neighborhood Effects**: After controlling for other factors, some neighborhoods consistently experience longer response times, with Jamaica Plain showing the longest delays and Hyde Park showing the fastest improvements.
+- **Income-based disparity**: Higher-income areas consistently received faster responses for complex requests.
+- **Minority group impact**: Neighborhoods with >75% minority population had **notably slower** service.
+- **Seasonality & region interaction**: South Boston had slower service especially in winter.
+- **Statistical models** confirmed demographic and request-level factors significantly impacted response times.
 
-- **Seasonal Impact**: Winter months show significantly longer response times (128 hours) compared to Fall (105 hours), with the seasonal effect more pronounced in South Boston.
+---
 
-- **Request Type Variation**: Service request types like Sign Repair, Snow Plowing, and Bulk Item Pickup have much longer response times compared to Parking Enforcement and Street Cleaning requests.
+## 📂 Project Structure
 
-## Data
-
-The dataset consists of 311 service requests from Boston's Open Data Portal spanning 2015-2019. Each record includes:
-
-- Request open and close timestamps
-- Request type and description
-- Neighborhood and location
-- Responsible department
-- Service Level Agreement (SLA) target date
-- Request source (app, website, phone, etc.)
-
-## Methodology
-
-### 1. Data Preparation
-
-- Combined multiple years of data into a unified dataset
-- Converted text dates to proper datetime objects
-- Created new features including response time, on-time flag, and seasonal indicators
-- Classified neighborhoods into North Boston and South Boston regions
-
-### 2. Exploratory Data Analysis
-
-We conducted extensive exploratory analysis to understand patterns in the data:
-
-- Distributions of response times across neighborhoods and regions
-- On-time resolution rates by neighborhood
-- Response time by request type and neighborhood
-- Seasonal trends and year-over-year changes
-
-### 3. Statistical Modeling
-
-- **Linear Regression**: Examined neighborhood effects while controlling for other factors
-- **Random Forest**: Identified the most important predictors of response time
-- **ANOVA**: Compared response times across regions, neighborhoods, and seasons
-- **Trend Analysis**: Tracked changes in service equity over the five-year period
-
-## Key Visualizations
-
-### Response Time Distribution by Region
-![Response Time Distribution](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/response_time_dist.png)
-
-This histogram shows the distribution of response times for North vs South Boston neighborhoods on a logarithmic scale. South Boston neighborhoods (teal) show consistently longer response times, particularly in the 1-day to 1-week range.
-
-### Top Predictors of Response Time
-![Variable Importance](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/variable_importance.png)
-
-The Random Forest model identified request type as the most important predictor of response time, followed by source and request year. These three variables together account for the majority of predictive power.
-
-### Response Time by Request Type and Region
-![Response by Type](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/response_by_type.png)
-
-This chart compares median response times between North and South Boston across different request types. South Boston consistently experiences longer response times across most request types.
-
-### Neighborhood Response Time Disparities
-![Disparity Trends](https://github.com/hittanshubhanderi20/Boston-311-Service-Equity-Analysis/blob/main/disparity_trends.png)
-
-This visualization tracks neighborhood response time disparities over the five-year period. The three neighborhoods with the highest disparities (Hyde Park, Dorchester, and Jamaica Plain) are highlighted, showing persistent inequities.
-
-## Technologies Used
-
-- **R**: Primary programming language for data analysis
-- **tidyverse**: Data manipulation and visualization
-- **lubridate**: Date and time handling
-- **ranger/randomForest**: Machine learning modeling
-- **sf**: Spatial data handling
-- **ggplot2**: Data visualization
-- **caret**: Machine learning workflow
-- **car/emmeans**: Statistical analysis
-
-## How to Use This Repository
-
-### Prerequisites
-
-- R (version 4.1.0 or higher)
-- Required R packages (listed in the scripts)
-
-### Running the Analysis
-
-1. Clone this repository
-2. Download the Boston 311 data files from [Boston's Open Data Portal](https://data.boston.gov/dataset/311-service-requests)
-3. Place the CSV files in the project directory (named as `2015.csv`, `2016.csv`, etc.)
-4. Run the `project1_final_file.R` script to reproduce the full analysis
-
-```r
-# Example code to run the analysis
-source("project1_final_file.R")
 ```
 
-## Project Structure
+📁 Boston311-Equity-Analysis/
+├── Final\_Group\_Analysis.R                # Full source code
+├── \*.csv                                 # Cleaned & aggregated analysis outputs
+├── \*.png                                 # Final presentation-quality charts
+├── regression\_results.txt                # Summary of OLS regression
+├── stepwise\_regression\_results.txt       # Stepwise selection summary
+├── lasso\_coefficients.txt                # LASSO model coefficients
+├── README.md                             # Project overview (this file)
 
-- `project1_final_file.R`: Main analysis script with all data processing, visualization, and modeling
-- `project1.R`: Development version with additional exploratory code
-- `Initial_Analysis_Report.pdf`: Initial project documentation and findings
-- `Final_Report.pdf`: Comprehensive final report with detailed analysis, findings, and recommendations
+````
 
-## Documentation
+---
 
-For a detailed understanding of our methodology, findings, and recommendations, please review the [Final Report](Final_Report.md). This comprehensive document includes:
+## 🛠️ Technologies Used
 
-- Detailed statistical analysis results
-- In-depth discussion of neighborhood disparities
-- Temporal and seasonal trends analysis
-- Machine learning model interpretations
-- Policy recommendations based on findings
+- **R 4.2.0+**
+- `tidyverse`, `ggplot2`, `broom`, `glmnet`, `caret`, `patchwork`, `lubridate`, `Metrics`
+- Data: [Boston 311 Public Service Requests](https://data.boston.gov/)
 
-## Authors
+---
 
-- Hittanshu Mansukhbhai Bhanderi
-- Aditi Anil Shinde
-- Unnati Kaur Hunjan
+## 🧪 Analytical Methods
 
-## Acknowledgments
+### ✅ OLS Regression
+Used log-transformed response time with interaction effects to identify demographic, request, and seasonality effects.
 
-- Data provided by the City of Boston's Open Data Portal
-- Northeastern University, ALY6015- Intermediate Analytics
+### ✅ Stepwise Regression
+Selected significant predictors based on AIC criteria.
 
-## License
+### ✅ LASSO Regularization
+Optimized model with penalty tuning for sparse and interpretable predictors.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
+
+## 🧠 Skills Demonstrated
+
+- **Advanced Data Wrangling**: 311 records + neighborhood-level demographic merging
+- **Feature Engineering**: Request complexity, region classification, socio-economic grouping
+- **Regression Modeling**: Linear, interaction, stepwise, and LASSO
+- **Visual Storytelling**: Custom, publication-quality plots with ggplot2
+- **Equity-Oriented Analysis**: Designed to uncover structural disparity, not just performance
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repo:
+```bash
+git clone https://github.com/yourusername/Boston311-Equity-Analysis.git
+cd Boston311-Equity-Analysis
+````
+
+2. Open `Final_Group_Analysis.R` in **RStudio**
+
+3. Make sure you have the required packages installed:
+
+```R
+install.packages(c("tidyverse", "lubridate", "ggplot2", "scales", "broom",
+                   "glmnet", "caret", "Metrics", "patchwork", "mice", "stargazer"))
+```
+
+4. Run the file to:
+
+   * Clean & join the data
+   * Analyze equity patterns
+   * Fit and compare regression models
+   * Export results + visualizations
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Contact
+
+Built with ❤️ by Hittanshu Bhanderi
+Connect via [LinkedIn](https://www.linkedin.com/in/hittanshubhanderi/)
+
+---
